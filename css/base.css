@@ -4,8 +4,13 @@ body{
 }
 
 .navbar.scrolled{
-  background-color: #f8f9fa;
+  background-color : #C0C0C0;
   
+}
+.navbar,
+.navbar-brand {
+  font-size:1.5rem;
+  font-weight : 600;
 }
 .nav-trans{
   -webkit-transition: all 1s ease;
@@ -13,21 +18,25 @@ body{
   -o-transition: all 1s ease;
   transition: all 1s ease;
 }
+
 .sidebar{
     position:fixed;
     z-index: 1032;
-    width: 200px;
     height: 100%;
-    margin-left:-200px;
+    width: 300px;
+    margin-left:-300px;
     background: #f8f9fa;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+
+    font-size:1.5rem;
+  font-weight : 600;
 }
 .sidebar-first,
 .sidebar-item{
-    padding: .5rem 1rem;
+    padding: 1.5rem 2rem;
 }
 .sidebar-first a,
 .sidebar-item a {
@@ -80,7 +89,7 @@ body{
 .search{
     position:fixed;
     width:100%;
-    margin-top:-54px;
+    margin-top:-84px;
     padding:.5rem 1rem;
     z-index: 1032;
     background-color: #f8f9fa;
@@ -101,8 +110,8 @@ body{
     margin-top:0px;
 }
 .search-btn{
-  cursor : pointer;
-  padding-top: .8rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
 }
 
 .ais-SearchBox{
@@ -240,7 +249,9 @@ header.masthead .overlay {
     margin: 0;
     padding: 0;
   }
-  
+  .list-inline-item a{
+    color : #000;
+  }
   footer .copyright {
     font-size: 14px;
     margin-top : 20;

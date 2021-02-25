@@ -51,7 +51,8 @@ $(document).ready(function () {
       history.back();
     }
   });
-  $('.search-toggle').click(function () {
+  $('.search-toggle').click(function (event) {
+    event.preventDefault();
     if (sisClosed == true) {
       history.pushState({ page: 'searchbar-on' }, null, '#searchbar');
       searchbarOn();
@@ -84,9 +85,16 @@ $(document).ready(function () {
   });
   $( window ).scroll(function() {
     if($(document).scrollTop() > 608){
+      $('.arrow-top').addClass('opacity');
       $('.index').addClass('fixed');
     }else{
+      $('.arrow-top').removeClass('opacity');
       $('.index').removeClass('fixed');
     }
+  });
+
+  $('.arrow-top').on('click',()=>{
+    $('body').animate({scrollTop: 0},500);
+
   });
 });

@@ -2,7 +2,7 @@
 
 <head>
   <title>development-log</title>
-  
+
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -11,10 +11,8 @@
   <link rel="stylesheet" href="/css/base.css" />
   <link rel="stylesheet" href="/css/post.css" />
 
-  <script
-  src="https://code.jquery.com/jquery-3.5.1.min.js"
-  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
@@ -32,14 +30,14 @@
     <div id="hits"></div>
     <div id="pagination"></div>
   </div>
-  <div class="input-group search">
+  <div class="input-group search py-4">
     <div class="input-group-prepend">
 
       <button type="button" class="search-toggle btn btn-secondary"><i class="fas fa-arrow-left fa-lg"></i></button>
       <div id="searchbox"></div>
     </div>
   </div>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light nav-trans">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light nav-trans py-4">
     <button class="navbar-toggler sidebar-toggle" type="button" data-toggle="collapse"
       data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
       aria-label="Toggle navigation">
@@ -62,7 +60,7 @@
           <a class="nav-link" href="/repository">Repository</a>
         </li>
         <li class="nav-item">
-          <span class="fas fa-search fa-lg search-toggle search-btn"></span>
+          <a class="nav-link" href="#"><span class="fas fa-search fa-lg search-toggle search-btn"></span></a>
         </li>
 
       </ul>
@@ -74,7 +72,7 @@
       <li class="sidebar-first">
         <a class="sidebar-item-title" href="/">Dev-Log</a>
         <button class="sidebar-toggle navbar-toggler float-right" type="button">
-          <i class="fas fa-times fa-2x"></i>
+          <i class="fas fa-arrow-left fa-2x"></i>
         </button>
       </li>
       <li class="sidebar-item">
@@ -88,123 +86,123 @@
 
   <header class="masthead">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="post-heading">
-                    <h1>Java Generic, 제네릭 타입</h1>
-                    <h2 class="subheading">정의 및 기능에 대한 간단한 설명 중심으로</h2>
-                    <span class="meta">Posted on February 24, 2021</span>
-                    <span class="sentence"><i class="fas fa-chevron-circle-down"></i></span>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Java Generic, 제네릭 타입</h1>
+            <h2 class="subheading">정의 및 기능에 대한 간단한 설명 중심으로</h2>
+            <span class="meta">Posted on February 24, 2021</span>
+            <span class="sentence"><i class="fas fa-chevron-circle-down"></i></span>
+          </div>
         </div>
+      </div>
     </div>
-</header>
-<article class="container flex-box">
-        <div class="row">
-            <div class="col-lg-10 col-md-12 mx-auto">
-                <h2 id="p1" class="section-heading">제네릭이란?</h2>
+  </header>
+  <article class="container flex-box">
+    <div class="row">
+      <div class="col-lg-10 col-md-12 mx-auto">
+        <h2 id="p1" class="section-heading">제네릭이란?</h2>
 
-                <blockquote class="blockquote">
-                    하나 이상의 타입 매개변수(type parameter)를 선언하고 있는 클래스나 인터페이스를 제네릭 클래스, 또는 제네릭 인터페이스라고 하며 이를 합쳐 제네릭 타입이라고
-                    한다.
-                </blockquote>
-                <p>
-                    여기서 타입 매개변수(type parameter)는 &lt;&gt;안에 있는 타입을 말한다.
-                </p>
+        <blockquote class="blockquote">
+          하나 이상의 타입 매개변수(type parameter)를 선언하고 있는 클래스나 인터페이스를 제네릭 클래스, 또는 제네릭 인터페이스라고 하며 이를 합쳐 제네릭 타입이라고
+          한다.
+        </blockquote>
+        <p>
+          여기서 타입 매개변수(type parameter)는 &lt;&gt;안에 있는 타입을 말한다.
+        </p>
 
-                <h2 id="p2" class="section-heading">사용 목적</h2>
-                <blockquote class="blockquote">
-                    외부에서 형을 결정할 수 있다는 점과 오류가 발생했을 때 컴파일 타임에 알 수 있기때문이다.
-                </blockquote>
-                <p>
-                    제네릭없이 Object를 이용하여 외부에서 내부 멤버 변수의 형을 결정할 수 있다. 하지만 오류가 발생했을 때 런타임 시간에 체크해야하기 때문에 디버깅을 통해 체크해야하며,
-                    상당한 시간이 걸린다. 제네릭을 사용하면 컴파일할 때 알 수 있기 때문에 바로 해결할 수 있는 장점이 있다.
-                </p>
-                <h2 id="p3" class="section-heading">형식 타입 매개변수</h2>
+        <h2 id="p2" class="section-heading">사용 목적</h2>
+        <blockquote class="blockquote">
+          외부에서 형을 결정할 수 있다는 점과 오류가 발생했을 때 컴파일 타임에 알 수 있기때문이다.
+        </blockquote>
+        <p>
+          제네릭없이 Object를 이용하여 외부에서 내부 멤버 변수의 형을 결정할 수 있다. 하지만 오류가 발생했을 때 런타임 시간에 체크해야하기 때문에 디버깅을 통해 체크해야하며,
+          상당한 시간이 걸린다. 제네릭을 사용하면 컴파일할 때 알 수 있기 때문에 바로 해결할 수 있는 장점이 있다.
+        </p>
+        <h2 id="p3" class="section-heading">형식 타입 매개변수</h2>
 
-                <p>
-                    제네릭 타입을 선언할 때 사용하는 것으로, 명명규칙을 다음과 같다.
-                </p>
-                <p>
-                <ul>
-                    <li>E : Element -> Collection 정의할 때</li>
-                    <li>K : Key -> Collection 중에 Key가 필요한 경우</li>
-                    <li>N : Number</li>
-                    <li>T : Type -> 일반적인 제네릭 정의할 때 사용</li>
-                    <li>V : Value</li>
-                </ul>
-                </p>
-                <h2 id="p4" class="section-heading">와일드 카드 타입</h2>
-                <span class="caption text-muted">
-                    와일드 카드 타입을 설명하기 앞서 공변과 불공변을 설명한다.
-                </span>
-                <p>
-                    공변은 변수를 공유할 수 있다는 의미이다. 대개 부모 자식 클래스 관계에서 부모 변수는 자식 객체를 받아 들일 수 있다.
-                    대표적은 Object 변수가 이에 해당된다.
-                </p>
-                <p>
-                    반대로 공유할 수 없는 변수를 불공변이라고 한다. 아무 관계 없는 클래스 관계에서 변수에 다른 객체를 할당 할 수 없다.
-                </p>
+        <p>
+          제네릭 타입을 선언할 때 사용하는 것으로, 명명규칙을 다음과 같다.
+        </p>
+        <p>
+        <ul>
+          <li>E : Element -> Collection 정의할 때</li>
+          <li>K : Key -> Collection 중에 Key가 필요한 경우</li>
+          <li>N : Number</li>
+          <li>T : Type -> 일반적인 제네릭 정의할 때 사용</li>
+          <li>V : Value</li>
+        </ul>
+        </p>
+        <h2 id="p4" class="section-heading">와일드 카드 타입</h2>
+        <span class="caption text-muted">
+          와일드 카드 타입을 설명하기 앞서 공변과 불공변을 설명한다.
+        </span>
+        <p>
+          공변은 변수를 공유할 수 있다는 의미이다. 대개 부모 자식 클래스 관계에서 부모 변수는 자식 객체를 받아 들일 수 있다.
+          대표적은 Object 변수가 이에 해당된다.
+        </p>
+        <p>
+          반대로 공유할 수 없는 변수를 불공변이라고 한다. 아무 관계 없는 클래스 관계에서 변수에 다른 객체를 할당 할 수 없다.
+        </p>
 
-                <blockquote class="blockquote">
-                    제네릭 타입은 대표적인 불공변이다.
-                </blockquote>
-                <p>
-                    예를 들면 List&lt;Integer&gt;와 List&lt;String&gt;의 객체는 불공변이기 때문에 서로의 변수에 할당 할 수 없다.
-                    이를 위한 메커니즘이 바로 와일드 카드 타입이다.
-                </p>
-                <p>
-                    ex) List&lt;?&gt;=new List&lt;Integer&gt;();나 List&lt;?&gt;=new List&lt;String&gt;(); 이런식으로 사용
-                    가능하다.
-                </p>
-                <blockquote class="blockquote">
-                    따라서 와일드 카드 타입은 변수 및 매개 변수 선언시 주로 사용된다.
-                </blockquote>
+        <blockquote class="blockquote">
+          제네릭 타입은 대표적인 불공변이다.
+        </blockquote>
+        <p>
+          예를 들면 List&lt;Integer&gt;와 List&lt;String&gt;의 객체는 불공변이기 때문에 서로의 변수에 할당 할 수 없다.
+          이를 위한 메커니즘이 바로 와일드 카드 타입이다.
+        </p>
+        <p>
+          ex) List&lt;?&gt;=new List&lt;Integer&gt;();나 List&lt;?&gt;=new List&lt;String&gt;(); 이런식으로 사용
+          가능하다.
+        </p>
+        <blockquote class="blockquote">
+          따라서 와일드 카드 타입은 변수 및 매개 변수 선언시 주로 사용된다.
+        </blockquote>
 
-                <h2 id="p5" class="section-heading">바운디드</h2>
-                <blockquote class="blockquote">
-                    타입 매개변수의 범위를 한정 짓기 위해 형식 타입 매개변수나 와일드 카드에 사용되며 extends와 super를 통해 타입 매개변수의 범위를 한정 지을 수 있다.
-                </blockquote>
-                <p>
-                    바운디드 와일드 카드매개변수 예시
-                <ul>
-                    <li>public void a(List&lt;? extends A&gt; b){ ... } -> A를 포함한 자식들까지로 한정</li>
-                    <li>public void a(List&lt;? super A&gt; b){ ... } -> A를 포함한 부모들까지로 한정</li>
-                </ul>
-                </p>
-                <p>
-                    바운디드 형식 타입 매개변수
-                <ul>
-                    <li>public class A&lt;T extends B&gt;{ ... } -> B를 포함한 자식들까지로 한정</li>
-                    <li>public class A&lt;T extends B&gt;{ ... } -> B를 포함한 부모들까지로 한정</li>
-                </ul>
-                </p>
+        <h2 id="p5" class="section-heading">바운디드</h2>
+        <blockquote class="blockquote">
+          타입 매개변수의 범위를 한정 짓기 위해 형식 타입 매개변수나 와일드 카드에 사용되며 extends와 super를 통해 타입 매개변수의 범위를 한정 지을 수 있다.
+        </blockquote>
+        <p>
+          바운디드 와일드 카드매개변수 예시
+        <ul>
+          <li>public void a(List&lt;? extends A&gt; b){ ... } -> A를 포함한 자식들까지로 한정</li>
+          <li>public void a(List&lt;? super A&gt; b){ ... } -> A를 포함한 부모들까지로 한정</li>
+        </ul>
+        </p>
+        <p>
+          바운디드 형식 타입 매개변수
+        <ul>
+          <li>public class A&lt;T extends B&gt;{ ... } -> B를 포함한 자식들까지로 한정</li>
+          <li>public class A&lt;T extends B&gt;{ ... } -> B를 포함한 부모들까지로 한정</li>
+        </ul>
+        </p>
 
 
-                <h2 id="p6" class="section-heading">제네릭을 사용할 수 없는 경우</h2>
-                <blockquote class="blockquote">
-                    new와 형식적 매개변수를 이용해 객체를 생성할 수 없다. ex) T[] a = new T[5](X);<br>
-                    static 변수에도 제네릭을 사용할 수 없다.
-                </blockquote>
-                <p>
-                    이는 제네릭은 런타임 시간에 타입이 결정되는 데 위의 두가지 경우는 컴파일 타임에 결정되기 때문이다. 또한 Collection의 객체들은 컴파일 시간이 지나면 타입
-                    매개변수가 없어져 있다. 타입이 이미 결정됬기 때문이다.
-                </p>
-                <h2 id="p7" class="section-heading">메서드와 제네릭</h2>
-                <blockquote class="blockquote">
-                    제네릭 메서드는 static이든 아니든 사용가능하다.
-                </blockquote>
-                <span class="caption text-muted">
-                    메서드는 변수처럼 형을 정해서 메모리에 할당하는 것이 아닌 틀만 메모리에 할당하기 때문이다.
-                </span>
-                <p>
-                    기본적으로 return type 앞에 &lt;&gt;안에 형식 타입 매개변수를 정의한다. 그리고 클래스 역시 제네릭인데 내부에 제네릭 메서드를 정의하게 될 때 둘은 전혀
-                    다른 것으로 인식된다.
-                </p>
+        <h2 id="p6" class="section-heading">제네릭을 사용할 수 없는 경우</h2>
+        <blockquote class="blockquote">
+          new와 형식적 매개변수를 이용해 객체를 생성할 수 없다. ex) T[] a = new T[5](X);<br>
+          static 변수에도 제네릭을 사용할 수 없다.
+        </blockquote>
+        <p>
+          이는 제네릭은 런타임 시간에 타입이 결정되는 데 위의 두가지 경우는 컴파일 타임에 결정되기 때문이다. 또한 Collection의 객체들은 컴파일 시간이 지나면 타입
+          매개변수가 없어져 있다. 타입이 이미 결정됬기 때문이다.
+        </p>
+        <h2 id="p7" class="section-heading">메서드와 제네릭</h2>
+        <blockquote class="blockquote">
+          제네릭 메서드는 static이든 아니든 사용가능하다.
+        </blockquote>
+        <span class="caption text-muted">
+          메서드는 변수처럼 형을 정해서 메모리에 할당하는 것이 아닌 틀만 메모리에 할당하기 때문이다.
+        </span>
+        <p>
+          기본적으로 return type 앞에 &lt;&gt;안에 형식 타입 매개변수를 정의한다. 그리고 클래스 역시 제네릭인데 내부에 제네릭 메서드를 정의하게 될 때 둘은 전혀
+          다른 것으로 인식된다.
+        </p>
 
-            </div>
-        </div>
+      </div>
+    </div>
     <aside class="index-container">
       <div class="index">
         <div class='card'>
@@ -212,33 +210,33 @@
             <div class='card-title'>Index</div>
           </div>
           <div class='card-body'>
-              <div class='card-text'>
-                <a class="card-link" href="#p1">1.제네릭이란</a>
-              </div>
-              <div class='card-text'>
-                <a class="card-link" href="#p2">2. 사용목적</a>
-              </div>
-              <div class='card-text'>
-                <a class="card-link" href="#p3">3. 형식 타입 매개변수</a>
-              </div>
-              <div class='card-text'>
-                <a class="card-link" href="#p4">4. 와일드 카드 타입</a>
-              </div>
-              <div class='card-text'>
-                <a class="card-link" href="#p5">5. 바운디드</a>
-              </div>
-              <div class='card-text'>
-                <a class="card-link" href="#p6">6. 제네릭을 사용할 수 없는 경우</a>
-              </div>
-              <div class='card-text'>
-                <a class="card-link" href="#p7">7. 메서드와 제네릭</a>
-              </div>
+            <div class='card-text'>
+              <a class="card-link" href="#p1">1.제네릭이란</a>
+            </div>
+            <div class='card-text'>
+              <a class="card-link" href="#p2">2. 사용목적</a>
+            </div>
+            <div class='card-text'>
+              <a class="card-link" href="#p3">3. 형식 타입 매개변수</a>
+            </div>
+            <div class='card-text'>
+              <a class="card-link" href="#p4">4. 와일드 카드 타입</a>
+            </div>
+            <div class='card-text'>
+              <a class="card-link" href="#p5">5. 바운디드</a>
+            </div>
+            <div class='card-text'>
+              <a class="card-link" href="#p6">6. 제네릭을 사용할 수 없는 경우</a>
+            </div>
+            <div class='card-text'>
+              <a class="card-link" href="#p7">7. 메서드와 제네릭</a>
+            </div>
           </div>
-      </div>
-      
+        </div>
+
     </aside>
-</article>
-<hr>
+  </article>
+  <hr>
   <footer>
     <div class="container">
       <div class="row">
@@ -258,8 +256,12 @@
       </div>
     </div>
   </footer>
+  <div class="arrow-top fa-2x text-center">
+    <i class="fas fa-angle-double-up"></i>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/algoliasearch/4.5.1/algoliasearch-lite.umd.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js"
+    integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
   <script src="/js/algolia.js"></script>
 </body>
 

@@ -1,3 +1,9 @@
+hr.divider {
+  max-width: 3.7rem;
+  border-width: 0.4rem;
+  border-color: #f4623a;
+}
+
 .post-preview > a {
     color: #212529;
   }

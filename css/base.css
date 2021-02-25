@@ -7,11 +7,7 @@ body{
   background-color : #C0C0C0;
   
 }
-.navbar,
-.navbar-brand {
-  font-size:1.5rem;
-  font-weight : 600;
-}
+
 .nav-trans{
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -23,8 +19,8 @@ body{
     position:fixed;
     z-index: 1032;
     height: 100%;
-    width: 300px;
-    margin-left:-300px;
+    width: 200px;
+    margin-left:-200px;
     background: #f8f9fa;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -36,7 +32,7 @@ body{
 }
 .sidebar-first,
 .sidebar-item{
-    padding: 1.5rem 2rem;
+    padding: .5rem 1rem;
 }
 .sidebar-first a,
 .sidebar-item a {
@@ -82,14 +78,13 @@ body{
 }
 
 .sidebar-item-title{
-    font-size: 1.5rem;
     padding-top : 1.5rem;
     padding-bottom : 1.5rem;
 }
 .search{
     position:fixed;
     width:100%;
-    margin-top:-84px;
+    margin-top:-54px;
     padding:.5rem 1rem;
     z-index: 1032;
     background-color: #f8f9fa;

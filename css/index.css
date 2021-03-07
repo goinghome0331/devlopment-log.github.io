@@ -3,7 +3,9 @@ hr.divider {
   border-width: 0.4rem;
   border-color: #f4623a;
 }
-
+.post-preview {
+  text-align: center;
+}
 .post-preview > a {
     color: #212529;
   }

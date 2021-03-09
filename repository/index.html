@@ -26,16 +26,16 @@
 
 <body>
   <div class="overlay"></div>
-  <div class="search-result">
-    <div id="stats"></div>
-    <div id="hits"></div>
-    <div id="pagination"></div>
-  </div>
   <div class="input-group search">
     <div class="input-group-prepend">
-
       <button type="button" class="search-toggle btn btn-secondary"><i class="fas fa-arrow-left fa-lg"></i></button>
       <div id="searchbox"></div>
+      <div id="poweredby"></div>
+    </div>
+    <div class="search-result">
+      <div id="stats"></div>
+      <div id="hits"></div>
+      <div id="pagination"></div>
     </div>
   </div>
   <nav class="navbar fixed-top navbar-expand-lg navbar-light nav-trans">
@@ -130,11 +130,11 @@
     fetch(url,{headers : {Accept: 'application/vnd.github.v3+json'}})
     .then(response =>response.json())
     .then(data => {
-      var bgs = ['bg-primary','bg-secondary','bg-success','bg-danger','bg-warning','bg-info','bg-dark','bg-light','bg-white'];
+      var bgs = ['bg-primary','bg-secondary','bg-success','bg-danger','bg-warning','bg-info','bg-dark'];
       
-      data.forEach((d)=>{
-        var i = Math.floor(Math.random()*9);
-        var card = "<div class='col-sm-4 '><div class='card'><div class='card-header "+bgs[i]+"'></div><div class='card-body'><div class='card-title'><a href='"+d.html_url+"'>"+d.name+"</a></div><div class='card-text'>"+(d.description == null ? "" : d.description)+"</div><div class='card-text'><i class='fas fa-star'></i>"+d.stargazers_count+"&nbsp;&nbsp;<i class='fas fa-code-branch'></i>"+d.forks_count+"</div></div></div></div>";
+      data.forEach((d, index)=>{
+        var i = Math.floor(Math.random()*7);
+        var card = "<div class='col-sm-4 '><a href='"+d.html_url+"'><div class='card'><div class='card-header "+bgs[i]+"'>R "+(index+1)+"</div><div class='card-body'><div class='card-title'>"+d.name+"</div><div class='card-text'>"+(d.description == null ? "" : d.description)+"</div><div class='card-text'><i class='fas fa-star'></i>"+d.stargazers_count+"&nbsp;&nbsp;<i class='fas fa-code-branch'></i>"+d.forks_count+"</div></div></div></a></div>";
         $('#cards').append(card); 
       });
     });

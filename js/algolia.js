@@ -22,6 +22,10 @@ search.addWidgets([
     }),
     instantsearch.widgets.searchBox({
         container: '#searchbox',
+        showReset: false,
+    }),
+    instantsearch.widgets.poweredBy({
+        container: '#poweredby',
     }),
     instantsearch.widgets.hits({
         container: '#hits',
@@ -29,9 +33,11 @@ search.addWidgets([
             empty: 'No Results for <q>{{query}}</q>',
             item: `
       <div>
-        <div class="hit-name">
-          <a href="{{url}}">{{#helpers.highlight}}{ "attribute": "title" }{{/helpers.highlight}}</a>
-        </div>
+        <a href="{{url}}">
+            <div class="hit-name">
+                {{#helpers.highlight}}{ "attribute": "title" }{{/helpers.highlight}}
+            </div>
+        </a>
       </div>
     `,
         },

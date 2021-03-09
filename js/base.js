@@ -18,6 +18,7 @@ $(document).ready(function () {
   }
   var searchbarOn = () => {
     hs.push('searchbar-on');
+    overlay.show();
     searchResult.show();
     searchbar.addClass('toggled');
     sisClosed = false;
@@ -29,8 +30,10 @@ $(document).ready(function () {
         sidebar.removeClass('toggled');
         overlay.hide();
         bisClosed = true;
+        
       } else if (lastState == 'searchbar-on') {
         searchResult.hide();
+        overlay.hide();
         searchbar.removeClass('toggled');
         sisClosed = true;
       }
@@ -63,6 +66,7 @@ $(document).ready(function () {
 
   overlay.click(function () {
     history.back();
+    
   });
   function checkScroll() {
     var startY = $('.navbar').height() * 2; //The point where the navbar changes in px

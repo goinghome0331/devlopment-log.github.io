@@ -8,7 +8,15 @@ $(document).ready(function () {
   var sisClosed = true;
   var hs = [];
   var r = Math.ceil(Math.random()*4);
-
+  var loc = location.href.split('#');
+  if(loc.length === 2){
+    history.back();
+    // if(loc[1] === 'sidebar'){
+    //   console.log(1);
+    // }else if(loc[1] === 'searchbar'){
+    //   console.log(2);
+    // }
+  }
   $('.masthead').css("backgroundImage",'url('+"/img/"+r+".jpg"+')');
   var sidebarOn = () => {
     hs.push('sidebar-on');

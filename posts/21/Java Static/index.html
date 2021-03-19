@@ -89,9 +89,9 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>Java Generic, 제네릭 타입</h1>
-            <h2 class="subheading">개념 및 기능에 관하여...</h2>
-            <span class="meta">Posted on February 24, 2021</span>
+            <h1>Java Static</h1>
+            <h2 class="subheading">사용되는 위치 중심으로...</h2>
+            <span class="meta">Posted on March 19, 2021</span>
             <span class="sentence"><i class="fas fa-chevron-circle-down"></i></span>
           </div>
         </div>
@@ -101,106 +101,94 @@
   <article class="container flex-box">
     <div class="row">
       <div class="col-lg-10 col-md-12 mx-auto">
-        <h2 id="p1" class="section-heading">제네릭이란?</h2>
+        <h2 id="p1" class="section-heading">static이란?</h2>
 
         <blockquote class="blockquote">
-          하나 이상의 타입 매개변수(type parameter)를 선언하고 있는 클래스나 인터페이스를 제네릭 클래스, 또는 제네릭 인터페이스라고 하며 이를 합쳐 제네릭 타입이라고
-          한다.
-        </blockquote>
-        <p>
-          여기서 타입 매개변수(type parameter)는 &lt;&gt;안에 있는 타입을 말한다.
-        </p>
-
-        <h2 id="p2" class="section-heading">사용 목적</h2>
-        <blockquote class="blockquote">
-          외부에서 형을 결정할 수 있다는 점과 오류가 발생했을 때 컴파일 타임에 알 수 있기때문이다.
-        </blockquote>
-        <p>
-          제네릭없이 Object를 이용하여 외부에서 내부 멤버 변수의 형을 결정할 수 있다. 하지만 오류가 발생했을 때 런타임 시간에 체크해야하기 때문에 디버깅을 통해 체크해야하며,
-          상당한 시간이 걸린다. 제네릭을 사용하면 컴파일할 때 알 수 있기 때문에 바로 해결할 수 있는 장점이 있다.
-        </p>
-        <h2 id="p3" class="section-heading">형식 타입 매개변수</h2>
-
-        <p>
-          제네릭 타입을 선언할 때 사용하는 것으로, 명명규칙을 다음과 같다.
-        </p>
-        <p>
-        <ul>
-          <li>E : Element -> Collection 정의할 때</li>
-          <li>K : Key -> Collection 중에 Key가 필요한 경우</li>
-          <li>N : Number</li>
-          <li>T : Type -> 일반적인 제네릭 정의할 때 사용</li>
-          <li>V : Value</li>
-        </ul>
-        </p>
-        <h2 id="p4" class="section-heading">와일드 카드 타입</h2>
-        <span class="caption text-muted">
-          와일드 카드 타입을 설명하기 앞서 공변과 불공변을 설명한다.
-        </span>
-        <p>
-          공변은 변수를 공유할 수 있다는 의미이다. 대개 부모 자식 클래스 관계에서 부모 변수는 자식 객체를 받아 들일 수 있다.
-          대표적은 Object 변수가 이에 해당된다.
-        </p>
-        <p>
-          반대로 공유할 수 없는 변수를 불공변이라고 한다. 아무 관계 없는 클래스 관계에서 변수에 다른 객체를 할당 할 수 없다.
-        </p>
-
-        <blockquote class="blockquote">
-          제네릭 타입은 대표적인 불공변이다.
-        </blockquote>
-        <p>
-          예를 들면 List&lt;Integer&gt;와 List&lt;String&gt;의 객체는 불공변이기 때문에 서로의 변수에 할당 할 수 없다.
-          이를 위한 메커니즘이 바로 와일드 카드 타입이다.
-        </p>
-        <p>
-          ex) List&lt;?&gt;=new List&lt;Integer&gt;();나 List&lt;?&gt;=new List&lt;String&gt;(); 이런식으로 사용
-          가능하다.
-        </p>
-        <blockquote class="blockquote">
-          따라서 와일드 카드 타입은 변수 및 매개 변수 선언시 주로 사용된다.
+            자바의 정해진 키워드 중 하나이며, 대개 프로그램이 실행되는 동안 유지하거나 또는 전역적으로 접근하기 위한 용도로 사용된다.
         </blockquote>
 
-        <h2 id="p5" class="section-heading">바운디드</h2>
-        <blockquote class="blockquote">
-          타입 매개변수의 범위를 한정 짓기 위해 형식 타입 매개변수나 와일드 카드에 사용되며 extends와 super를 통해 타입 매개변수의 범위를 한정 지을 수 있다.
-        </blockquote>
         <p>
-          바운디드 와일드 카드매개변수 예시
-        <ul>
-          <li>public void a(List&lt;? extends A&gt; b){ ... } -> A를 포함한 자식들까지로 한정</li>
-          <li>public void a(List&lt;? super A&gt; b){ ... } -> A를 포함한 부모들까지로 한정</li>
-        </ul>
-        </p>
-        <p>
-          바운디드 형식 타입 매개변수
-        <ul>
-          <li>public class A&lt;T extends B&gt;{ ... } -> B를 포함한 자식들까지로 한정</li>
-          <li>public class A&lt;T extends B&gt;{ ... } -> B를 포함한 부모들까지로 한정</li>
-        </ul>
+            JVM 메모리 상에는 Method 영역에 위치하게 된다.
         </p>
 
-
-        <h2 id="p6" class="section-heading">제네릭을 사용할 수 없는 경우</h2>
+        <h2 id="p2" class="section-heading">사용되는 곳</h2>
         <blockquote class="blockquote">
-          new와 형식적 매개변수를 이용해 객체를 생성할 수 없다. ex) T[] a = new T[5](X);<br>
-          static 변수에도 제네릭을 사용할 수 없다.
+          사용되는 곳은 총 5가지이다.
         </blockquote>
         <p>
-          이는 제네릭은 런타임 시간에 타입이 결정되는 데 위의 두가지 경우는 컴파일 타임에 결정되기 때문이다. 또한 Collection의 객체들은 컴파일 시간이 지나면 타입
-          매개변수가 없어져 있다. 타입이 이미 결정됬기 때문이다.
+          <ul>
+            <li>변수</li>
+            <li>클래스</li>
+            <li>메소드</li>
+            <li>import</li>
+            <li>블록</li>
+          </ul>
         </p>
-        <h2 id="p7" class="section-heading">메서드와 제네릭</h2>
+        
+        <h2 id="p3" class="section-heading">변수</h2>
         <blockquote class="blockquote">
-          제네릭 메서드는 static이든 아니든 사용가능하다.
+          메모리에 고정적으로 한번만 할당되어, 프로그램이 종료될 때 해제되는 변수
+        </blockquote>
+        <p>
+          그렇기 때문에 해당 클래스로 생성된 모든 객체가 이 변수를 사용할 수 있다.
+        </p>
+        <p>
+          또한 객체를 생성하지 않고 클래스 명으로 접근가능하다. 물론 접근지정자에 따라 다르다.
+        </p>
+
+        <h2 id="p4" class="section-heading">클래스</h2>
+        <blockquote class="blockquote">
+            클래스 명 앞에 static을 붙이면 static 클래스이고 아니면 non static 클래스이다.
         </blockquote>
         <span class="caption text-muted">
-          메서드는 변수처럼 형을 정해서 메모리에 할당하는 것이 아닌 틀만 메모리에 할당하기 때문이다.
+          하지만 우리가 한 자바 파일에 만드는 클래스는  아무것도 적히지 않았기 때문에 Non static인 거 같지만 static 클래스이다. 또한 static을 붙일 수 없다.
         </span>
         <p>
-          기본적으로 return type 앞에 &lt;&gt;안에 형식 타입 매개변수를 정의한다. 그리고 클래스 역시 제네릭인데 내부에 제네릭 메서드를 정의하게 될 때 둘은 전혀
-          다른 것으로 인식된다.
+          한 클래스 안에 내부 클래스를 정의할 수 있는데 여기에는 static과 non static이 둘 다 존재한다.
+        </p>
+        <p>
+          특징은 내부 static 클래스는 일반적으로 선언하는 클래스와 같다. <br>
+          하지만 non static 클래스는 외부 클래스가 객체로 생성된 후 이를 통해 생성할 수 있다. 또는 외부 클래스의 메서드를 통해 생성될 수 있다.
         </p>
 
+        <h2 id="p5" class="section-heading">메서드</h2>
+        <blockquote class="blockquote">
+          클래스 함수라고 불리며 변수와 같이 객체 생성 없이 사용가능하다.
+        </blockquote>
+        <p>
+          static 메서드는 내부 클래스의 인스턴스 변수를 접근 할 수 없다.(이유는 간단히 설명하자면 변수의 생명주기와 안맞기 때문에)
+        </p>
+        <p>
+          대개 Math와 같은 유틸리티 클래스에서 주로 구현된다. 대게 전역적으로 사용되고 내부 멤버 변수와 함께 사용되기 보다는 그 함수만으로 기능을 제공하기 때문이다.<br>
+          <span class="caption text-muted">
+            따라서 유틸리티 클래스 상속될 필요가 없기 때문에 final을 붙인다.
+          </span>
+        </p>
+        <p>
+          또한 싱글톤 패턴에서 사용된다. 유일하게 생성될 수 있는 객체에 전역적으로 접근해야하기 때문이다.
+        </p>
+
+        <h2 id="p6" class="section-heading">import</h2>
+        <blockquote class="blockquote">
+          해당 클래스의 static 메서드를 클래스 명을 없애고 싶을 때, 주로 사용한다.
+        </blockquote>
+        <p>
+          static import에는 일반적으로 *를 사용하지 않는 것을 권장한다.
+        </p>
+        <p>
+          static import는 Eclipse에서 자동완성이 안된다.
+        </p>
+        <p>
+          주로 JUnit Test에서 사용된다.
+        </p>
+
+        <h2 id="p7" class="section-heading">블록</h2>
+        <blockquote class="blockquote">
+          static{ } 이런식으로 사용되며, 클래스 내부 초기화 작업이 이뤄진다.
+        </blockquote>
+        <p>
+          프로그램의 시작점인 main보다 앞서 실행된다.
+        </p>
       </div>
     </div>
     <aside class="index-container">
@@ -211,25 +199,25 @@
           </div>
           <div class='card-body'>
             <div class='card-text'>
-              <a class="card-link" href="#p1">1.제네릭이란</a>
+              <a class="card-link" href="#p1">1. static이란?</a>
             </div>
             <div class='card-text'>
-              <a class="card-link" href="#p2">2. 사용목적</a>
+              <a class="card-link" href="#p2">2. 사용되는 곳</a>
             </div>
             <div class='card-text'>
-              <a class="card-link" href="#p3">3. 형식 타입 매개변수</a>
+              <a class="card-link" href="#p3">3. 변수</a>
             </div>
             <div class='card-text'>
-              <a class="card-link" href="#p4">4. 와일드 카드 타입</a>
+              <a class="card-link" href="#p4">4. 클래스</a>
             </div>
             <div class='card-text'>
-              <a class="card-link" href="#p5">5. 바운디드</a>
+              <a class="card-link" href="#p5">5. 메서드</a>
             </div>
             <div class='card-text'>
-              <a class="card-link" href="#p6">6. 제네릭을 사용할 수 없는 경우</a>
+              <a class="card-link" href="#p6">6. import</a>
             </div>
             <div class='card-text'>
-              <a class="card-link" href="#p7">7. 메서드와 제네릭</a>
+              <a class="card-link" href="#p7">7. 블록</a>
             </div>
           </div>
         </div>
